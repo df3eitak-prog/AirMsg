@@ -117,6 +117,7 @@ AirMsg nodes can bridge to MQTT:
 - airmsg/nodes/<call>/status # Node status
 
 
+
 **Decoded JSON message example:**
 
 ```
