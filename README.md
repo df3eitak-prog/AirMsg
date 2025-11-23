@@ -109,12 +109,12 @@ AirMsg nodes can bridge to MQTT:
 
 **Topics:**
 
-```
-airmsg/gateway/<call>/rx # RF fragments received
-airmsg/gateway/<call>/tx # Messages to send via RF
-airmsg/decoded/incoming # Fully reassembled messages
-airmsg/raw/rf # Raw APRS AirMsg fragments
-airmsg/nodes/<call>/status # Node status
+```yaml
+    airmsg/gateway/<call>/rx # RF fragments received
+    airmsg/gateway/<call>/tx # Messages to send via RF
+    airmsg/decoded/incoming # Fully reassembled messages
+    airmsg/raw/rf # Raw APRS AirMsg fragments
+    airmsg/nodes/<call>/status # Node status
 ```
 
 
