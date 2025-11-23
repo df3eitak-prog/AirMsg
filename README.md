@@ -115,9 +115,7 @@ AirMsg nodes can bridge to MQTT:
 - airmsg/decoded/incoming # Fully reassembled messages
 - airmsg/raw/rf # Raw APRS AirMsg fragments
 - airmsg/nodes/<call>/status # Node status   
-
-
-### Decoded JSON message example:
+**Decoded JSON message example:**
 ```
 {
   "origin": "DL1ABC-9",
