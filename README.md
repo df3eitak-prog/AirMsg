@@ -46,22 +46,24 @@ All messages start with a **compact 5-byte binary header** (Base91-encoded for A
 
 **Byte layout:**
 
-Byte 0: MSGID[15:8]
-Byte 1: MSGID[7:0]
-Byte 2: FRAGIDX[3:0] | FRAGCOUNT[3:0]
-Byte 3: CHANNEL[3:0] | HOPS[2:0] | FLAG[0]
-Byte 4: FLAGS[3:0] | padding[3:0]
+Byte 0: MSGID[15:8]   
+Byte 1: MSGID[7:0]   
+Byte 2: FRAGIDX[3:0] | FRAGCOUNT[3:0]   
+Byte 3: CHANNEL[3:0] | HOPS[2:0] | FLAG[0]   
+Byte 4: FLAGS[3:0] | padding[3:0]   
 
 
 ### Encoding
 
-- 5-byte header → 7–8 Base91 characters → prepended to payload.  
-- Example APRS message (binary mode):
+- 5-byte header → 7–8 Base91 characters → prepended to payload.     
+- Example APRS message (binary mode):   
 
-```AMB|qK9a@xGHello from the summit```
+```
+AMB|qK9a@xGHello from the summit
+```   
 
 
-- Receiver Base91-decodes first 7–8 chars → extracts metadata → reassembles message.
+- Receiver Base91-decodes first 7–8 chars → extracts metadata → reassembles message.   
 
 ---
 
@@ -108,19 +110,16 @@ AirMsg nodes implement **peer-to-peer forwarding**:
 AirMsg nodes can bridge to MQTT:
 
 **Topics:**
-
-```yaml
 - airmsg/gateway/<call>/rx # RF fragments received
 - airmsg/gateway/<call>/tx # Messages to send via RF
 - airmsg/decoded/incoming # Fully reassembled messages
 - airmsg/raw/rf # Raw APRS AirMsg fragments
 - airmsg/nodes/<call>/status # Node status
-```
 
 
 **Decoded JSON message example:**
 
-```json
+```
 {
   "origin": "DL1ABC-9",
   "msgid": "1A2B",
